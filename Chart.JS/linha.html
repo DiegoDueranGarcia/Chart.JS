@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="prtb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1 style="text-align: center; font-family: monospace; ">Grafico de linhas</h1>
+
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <script>
+        const ctx = document.getElementById('myChart');
+    //   Setap 
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['12:00', '13:00', '14:00', '15:00','16:00','17:00'],
+            datasets: [{
+              label: 'Temperatura',
+              borderColor: 'rgb(255,0,0)',
+              backgroundColor: 'rgb(255,0,0)',
+              data: [30, 29, 28, 25, 22, 23],
+   
+              borderWidth: 1
+            },
+            {
+              type: 'line',
+              borderColor: 'rgb(0,0,255)',
+              backgroundColor: 'rgb(0,0,255)',
+              label: ' Umidade ',
+              data: [80, 82, 80, 85, 80, 83],
+              borderWidth: 2},
+            ]
+            
+            
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      
+</body>
+</html>
